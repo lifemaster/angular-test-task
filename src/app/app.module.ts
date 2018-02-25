@@ -18,6 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CookieModule } from 'ngx-cookie';
 
 import { AppComponent } from './app.component';
+import { MainComponent } from './components/main/main.component';
 import { AppNavComponent } from './components/app-nav/app-nav.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
@@ -33,7 +34,7 @@ import { ProductsService } from './services/products/products.service';
 
 
 const appRoutes: Routes = [
-  { path: '', component: MainContentComponent, canActivate: [PrivateRoutesGuard] },
+  { path: '', component: MainComponent, canActivate: [PrivateRoutesGuard] },
   { path: 'login', component: LoginFormComponent },
   { path: 'profile', component: UserProfileComponent, canActivate: [PrivateRoutesGuard] },
   { path: '**', component: NotFoundComponent, canActivate: [PrivateRoutesGuard] }
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     LoginFormComponent,
     MainContentComponent,
     NotFoundComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
